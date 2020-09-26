@@ -1,4 +1,4 @@
-//알고리즘 과제 - 삽입정렬
+//알고리즘 과제 - 삽입 정렬
 
 import java.util.*;
 public class Main {
@@ -15,10 +15,8 @@ public class Main {
 		}
 		
 		insertionSort(arr, arr.length);
-		
-		for (int i = 0; i < arr.length; i++) {
-			System.out.print(arr[i] + " ");
-		}
+	
+		printArr(arr, arr.length);
 		
 		sc.close();
 
@@ -36,6 +34,12 @@ public class Main {
 			sort[loc + 1] = newItem; //최종 위치에 삽입
 		}
 		
+	}
+	
+	public static void printArr(int[] arr, int n) {
+		for (int i = 0; i < n; i++) {
+			System.out.print(arr[i] + " ");
+		}
 	}
 	
 
