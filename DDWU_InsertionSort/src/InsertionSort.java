@@ -1,7 +1,7 @@
 //알고리즘 과제 - 삽입 정렬
 
 import java.util.*;
-public class Main {
+public class InsertionSort {
 
 	public static void main(String[] args) {
 		
@@ -9,20 +9,21 @@ public class Main {
 		
 		int[] arr = new int[10];
 		
-		System.out.print("10개의 데이터를 입력하세요: ");
+		System.out.print("10개의 데이터 입력: ");
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = sc.nextInt();
 		}
 		
-		insertionSort(arr, arr.length);
-	
+		sort(arr, arr.length);
+		
+		System.out.println("삽입 정렬 결과");
 		printArr(arr, arr.length);
 		
 		sc.close();
 
 	}
 	
-	public static void insertionSort(int[] sort, int n) {
+	public static void sort(int[] sort, int n) {
 		for (int i = 1; i < n; i++) {
 			int loc = i - 1;
 			int newItem = sort[i]; //삽입할 값 저장
