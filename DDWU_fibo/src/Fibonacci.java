@@ -1,4 +1,4 @@
-//알고리즘 과제 - 피보나치 수(동적 프로그래밍) -> n번째까지의 피보나치 수 구하기
+//알고리즘 과제 - 피보나치 수(동적 프로그래밍) -> n번째까지 피보나치 수 구하기
 
 import java.util.Scanner;
 public class Fibonacci {
