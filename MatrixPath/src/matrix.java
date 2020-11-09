@@ -19,11 +19,13 @@ public class matrix {
 			}
 		}
 		
+		
+		
 		sc.close();
 
 	}
 	
-	public static int matrixPath(int n, int[][] m, int[][] c) {
+	public static int matrixPath(int n, int[][] m) {
 		for (int i = 0; i < n; i++) {
 			c[i][0] = 0;
 		}
