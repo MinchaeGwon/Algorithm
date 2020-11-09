@@ -1,4 +1,4 @@
-//알고리즘 과제 - 행렬 경로 문제(동적 프로그래밍)
+//알고리즘 과제 - 행렬 곱셈 순서 문제(동적 프로그래밍)
 
 import java.util.Scanner;
 public class Matrix {
@@ -25,22 +25,5 @@ public class Matrix {
 
 	}
 	
-	public static int matrixPath(int n, int[][] m) {
-		for (int i = 0; i < n; i++) {
-			c[i][0] = 0;
-		}
-		
-		for (int j = 1; j < n; j++) {
-			c[0][j] = 0;
-		}
-		
-		for (int i = 1; i < n; i++) {
-			for (int j = 1; j < n; j++) {
-				c[i][j] = m[i][j] + Math.max(c[i - 1][j], c[i][j - 1]);
-			}
-		}
-		
-		return c[n][n];
-	}
 
 }
