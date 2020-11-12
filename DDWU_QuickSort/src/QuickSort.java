@@ -1,4 +1,4 @@
-//¾Ë°í¸®Áò °úÁ¦ - Äü Á¤·Ä
+//ì•Œê³ ë¦¬ì¦˜ ê³¼ì œ - í€µ ì •ë ¬
 
 import java.util.*;
 public class QuickSort {
@@ -8,14 +8,14 @@ public class QuickSort {
 		
 		int[] arr = new int[10];
 		
-		System.out.print("10°³ÀÇ µ¥ÀÌÅÍ ÀÔ·Â: ");
+		System.out.print("10ê°œì˜ ë°ì´í„° ì…ë ¥: ");
 		for (int i = 0 ; i < arr.length; i++) {
 			arr[i] = sc.nextInt();
 		}
 		
 		sort(arr, 0, arr.length - 1);
 		
-		System.out.println("Äü Á¤·Ä °á°ú");
+		System.out.println("í€µ ì •ë ¬ ê²°ê³¼");
 		printArr(arr, arr.length);
 		
 		sc.close();
@@ -30,11 +30,12 @@ public class QuickSort {
 	}
 	
 	public static int partition(int[] A, int left, int right) {
-		int pivot = A[right]; //±âÁØ¿ø¼Ò
+		int pivot = A[right]; //ê¸°ì¤€ ì›ì†Œ
 		int i = left - 1;
 		
 		for (int j = left; j < right; j++) {
-			if (A[j] < pivot) { //±âÁØ¿ø¼Òº¸´Ù ÀÛÀ¸¸é i°ª Áõ°¡ ÈÄ A[j]¿Í A[++i] ±³È¯
+			//ê¸°ì¤€ì›ì†Œë³´ë‹¤ ì‘ìœ¼ë©´ iê°’ ì¦ê°€ í›„ A[j]ì™€ A[++i] êµí™˜
+			if (A[j] < pivot) {
 				int tmp = A[j];
 				A[j] = A[++i];
 				A[i] = tmp;
