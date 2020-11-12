@@ -1,7 +1,7 @@
 //알고리즘 과제 - 행렬 곱셈 순서 문제(동적 프로그래밍)
 
 import java.util.Scanner;
-public class Matrix {
+public class MatrixChain {
 	
 	private static int[] p;
 	private static int[][] m;
