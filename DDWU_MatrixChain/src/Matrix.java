@@ -2,28 +2,60 @@
 
 import java.util.Scanner;
 public class Matrix {
-
-	private static int[][] c;
+	
+	private static int[] p;
+	private static int[][] m;
 	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("수를 입력하세요: ");
-		int N = sc.nextInt();
-		int[][] m = new int[N][N];
+		System.out.print("행렬의 개수: ");
+		int N  = sc.nextInt();
+		p = new int[N + 1];
+		int[][] matrix = new int[N][2];
 		
-		System.out.println(N + "*" + N + "행렬의 값을 입력하세요.");
+		//i번째 행렬의 열의 개수 == i+1번째 행렬의 행의 개수
+		System.out.println("행과 열의 개수 입력");
 		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < N; j++) {
-				m[i][j] = sc.nextInt();
+			matrix[i][0] = sc.nextInt();
+			matrix[i][1] = sc.nextInt();
+		}
+		
+		for (int i = 0; i <= N; i++) {
+			if (i == N)
+				p[i] = matrix[i - 1][1];
+			else
+				p[i] = matrix[i][0];
+		}
+		
+		int n = p.length - 1;
+		System.out.println("최소 곱셈 횟수: " + matrixChain(n));
+
+		sc.close();
+	}
+	
+	public static int matrixChain(int n) {
+		m = new int[n + 1][n + 1];
+		
+		for (int i = 1; i <= n; i++)
+			m[i][i] = 0;
+		
+		for (int r = 1; r <= n - 1; r++) {
+			for (int i = 1; i <= n - r; i++) {
+				int j = i + r;
+				m[i][j] = Integer.MAX_VALUE;
+				
+				for (int k = i; k <= j - 1; k++) {
+					m[i][j] = Math.min(m[i][j], m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j]);
+					
+//					int temp = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j];
+//					
+//					if (temp < m[i][j])
+//						m[i][j] = temp; 
+				}
 			}
 		}
 		
-		
-		
-		sc.close();
-
+		return m[1][n];
 	}
-	
-
 }
